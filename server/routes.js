@@ -8,7 +8,6 @@ router.route("/").get((req, res) => {
   res.json({ message: "GE API" })
 })
 
-router.use("/users", user)
 router.use("/general", general)
 
 router.use("*", (req, res) => res.status(404).json({ message: "Not Found" }))
