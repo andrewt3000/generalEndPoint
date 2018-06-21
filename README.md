@@ -43,8 +43,9 @@ limit | limit the number of rows returned (requires order by and limit) typicall
 The default is Example {x:1, y:2} translates to "where x=1 and y=2"
 JQL has mongo db style where clause operators.
 Example: where: { qty: { $gt: 20 } } = where qty > 20
-property | effect
----|--- |
+
+property | effect |
+---|---|
 $ne | not equal <>
 $gt | greater than >
 $gte | greater than or equal to >=
