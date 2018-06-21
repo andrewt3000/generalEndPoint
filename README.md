@@ -52,7 +52,7 @@ This prevents atacks that could run drop or alter commands.
 From /server directory.
 npm install  
 
-The config for auth0 is in server/index.js  
+The config for auth0 is in server/model/user/controller.js  
 The database config is in server/db/index.js  
 
 General EndPoint also has an extensive logging mechanism that requires this table be added named HistoryLog. (TODO: make it configurable to cut it off.)
