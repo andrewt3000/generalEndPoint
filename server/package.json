@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "dev": "LUCA_COMPANY_ID=6 LUCA_AP_ACCT_ID=1395 LUCA_OVERHEAD_ACCT_ID=1536 DB=paterp_dev nodemon index.js",
-    "start": "LUCA_COMPANY_ID=4 LUCA_AP_ACCT_ID=1069 LUCA_OVERHEAD_ACCT_ID=1210 NODE_ENV=production DB=paterp node index.js",
+    "dev": " DB=paterp_dev nodemon index.js",
+    "start": "NODE_ENV=production DB=paterp node index.js",
     "test": "jest"
   },
   "lint-staged": {
