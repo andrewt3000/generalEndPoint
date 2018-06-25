@@ -1,5 +1,5 @@
 const sql = require("mssql")
-const validation = require("../lib/jql/validation")
+const validation = require("jql/validation")
 const { DB } = process.env
 console.log(`database: ${DB}`)
 
@@ -41,8 +41,8 @@ pool.connect(err => {
               })
             }
           }
-          console.log("------------------- schema loaded -------------------")
           validation.setSchema(schema)
+          console.log("------------------- schema loaded -------------------")
         }
       )
     }

@@ -1,14 +1,9 @@
 const db = require("../db")
 const { diff } = require("deep-object-diff")
 const _ = require("lodash")
-const { stripArrays } = require("./jql/utils")
-const {
-  getSelectSql,
-  getCountSql,
-  getUpdateSql,
-  getInsertSql
-} = require("./jql")
-const {isValidTable} = require("./jql/validation")
+const { stripArrays } = require("jql/utils")
+const { getSelectSql, getCountSql, getUpdateSql, getInsertSql } = require("jql")
+const { isValidTable } = require("jql/validation")
 
 class Controller {
   constructor(model) {
@@ -51,7 +46,6 @@ class Controller {
     const result = await this.query(`select * from ${model}`)
     return res.status(200).json(result)
   }
-
 
   async findByQuery(req, res, next) {
     let { model } = this
@@ -152,7 +146,7 @@ class Controller {
         console.error(err)
         return res.status(400).json(err)
       }
-  
+
       const record = await this.dbSave(
         model,
         req.body,
@@ -164,7 +158,6 @@ class Controller {
       next(error)
     }
   }
-
 
   async dbSave(model, body, user = "unknown") {
     return new Promise(async (resolve, reject) => {
@@ -236,7 +229,6 @@ class Controller {
     })
   }
 
-
   async remove(req, res, next) {
     let { model } = this
     if (!model && req.params.model) {
@@ -266,7 +258,6 @@ class Controller {
       next(error)
     }
   }
-
 
   //similar to findById. no table validation.
   async dbFindById(model, id) {
@@ -299,7 +290,6 @@ class Controller {
       '${JSON.stringify(afterRecord)}', '${JSON.stringify(delta)}')`
     this.query(sql)
   }
-
 
   async query(sql, parameters, next) {
     try {
