@@ -32,7 +32,7 @@ Post body for query contains json object with these fields
 Property | Description |Type |
 ---|--- |---|
 fields| table column names. If not set, returns tableName.* | string[]
-joins| tables on which inner joins are performed. adds {tableName}Name to columns. Use -tableName for left outer join | string[]
+joins| tables on which inner joins are performed. adds {tableName}Name to columns. Use -tableName for left outer join. Pass an object to specif fields {model:"joinTable", fields\["myField1", "myField2"\]} | string[] or object[]
 where| object containing fields to form where clause. Example {x:1, y:2} translates to "where x=1 and y=2" See Where clause operators | object
 orderBy| array of strings of field names to order by. '-fieldName' for descending.| string[]
 children | table name for child records. if children property exists, it will return an additional array of objects for each child table in input array.  pulls based on foreign key convention | string[]
