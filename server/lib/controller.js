@@ -1,9 +1,14 @@
 const db = require("../db")
 const { diff } = require("deep-object-diff")
 const _ = require("lodash")
-const { stripArrays } = require("jql/utils")
-const { getSelectSql, getCountSql, getUpdateSql, getInsertSql } = require("jql")
-const { isValidTable } = require("jql/validation")
+const { stripArrays } = require("jq-lang/utils")
+const {
+  getSelectSql,
+  getCountSql,
+  getUpdateSql,
+  getInsertSql
+} = require("jq-lang")
+const { isValidTable } = require("jq-lang/validation")
 
 class Controller {
   constructor(model) {

@@ -1,5 +1,5 @@
 const sql = require("mssql")
-const validation = require("jql/validation")
+const validation = require("jq-lang/validation")
 const { DB } = process.env
 console.log(`database: ${DB}`)
 
