@@ -67,7 +67,9 @@ npm install
 The config for auth0 is in /server/index.js  
 The database config is in server/db/index.js  
 
-General EndPoint also has an extensive logging mechanism that requires this table be added named HistoryLog. (TODO: make it configurable to cut it off.)
+### Logging
+General EndPoint also has an extensive logging mechanism that requires this table be added named HistoryLog. (TODO: make it configurable to cut it off.)  
+
 CREATE TABLE dbo.HistoryLog (  
 	ID int NOT NULL IDENTITY(1,1),  
 	tableName varchar(100) NULL,  
@@ -84,7 +86,6 @@ ALTER TABLE dbo.HistoryLog ADD CONSTRAINT PK_HistoryLog PRIMARY KEY (ID);
 
 ### npm run dev  
 Starts the app for development on port 3001  
-
 
 ### npm start 
 Starts the production version of the app  
