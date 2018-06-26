@@ -53,11 +53,12 @@ $lt | less than <
 $lte | less than or equal to  <=
 
 ## Security
-GE is only for quick prototyping or for production use in an environment where authenticated all users are highly trusted such as an app for a small company. 
-For security purposes, it's important to not have a usernames and passwords in the database and to use a 3rd party such as auth0. Otherwise authenticated users could get a list of all usernames and update other user's passwords.
+GE is only for quick prototyping or for production use in an environment where all authenticated users are highly trusted. Example uses are an app for a small company or perhaps an admin app. All users have access to all select, insert, update, and delete functionality. A layer of security restricting access by role would make GE more useful.  
+
+Even with a small number of trusted users, it's important to not have a usernames and passwords in the database and to use a 3rd party such as auth0. Otherwise authenticated users could get a list of all usernames and update other user's passwords even if they are hashed.
+
 JQL is constructed to guard against sql injection attacks and it validates the table and column names against a schema.
-It also parameterizes it's input parameters against sql injection. 
-This prevents atacks that could run drop or alter commands.
+It also parameterizes it's input parameters against sql injection. This prevents accesss to create, drop, and alter commands.
 
 # To run
 
