@@ -1,10 +1,13 @@
 # General EndPoint seed project
 This is a General Endpoint (GE) seed project. This seed project is dependent on: express, auth0, and Sql Server database. However the concept and conventions of General Endpoint and JQL could be decoupled from these dependencies.
 
+GE is dependent on [JQL](https://github.com/andrewt3000/jql/blob/master/README.md#jql-1)  
+GE is designed to work with [General Store](https://github.com/andrewt3000/generalStore)
+
 # General Endpoint
 General Endpoint is a frameworks for quickly creating crud screens and reducing boilerplate.
 General Endpoint is designed for typical uses cases, not all queries. Create custom endpoints for more complicated database operations.  
-It is only for quick prototyping or for production use in an environment where authenticated users are highly trusted. (See Security)
+It is only for quick prototyping or for production use in an environment where authenticated users are highly trusted. (See [Security](https://github.com/andrewt3000/generalEndPoint#security))
 General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, code that turns json into sql statements.      
 
 General endpoint relies on 3 normalization conventions:  
