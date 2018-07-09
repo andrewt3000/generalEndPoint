@@ -1,8 +1,14 @@
 # General EndPoint seed project
 This is a General Endpoint (GE) seed project. This seed project is dependent on: express, auth0, and Sql Server database. However the concept and conventions of General Endpoint and JQL could be decoupled from these dependencies.
 
-GE is dependent on [JQL](https://github.com/andrewt3000/jql/blob/master/README.md#jql-1) for data access  
-GE is designed to work with [General Store](https://github.com/andrewt3000/generalStore) on the client side.  
+### Server Side
+[JQL](https://github.com/andrewt3000/jql#jql) Json Query language. Converts json to sql.   
+[General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven node api  
+
+### Client Side
+[General Store](https://github.com/bradfmd/patportal/blob/master/generalStore.md#general-store) (GS) - mobx store integrated with GE  
+[General Components](https://github.com/andrewt3000/generalComponents#general-components) - data aware react/antd components integrated with GS and GE.
+
 
 # General Endpoint
 General Endpoint is a frameworks for quickly creating crud screens and reducing boilerplate.
