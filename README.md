@@ -20,37 +20,10 @@ GE HTTP conventions (similar to rest)
 | --- | --- | --- | --- |
 GET | /api/general/{tableName}/ | Get all records | Object[]
 GET | /api/general/{tableName}/{ID} | Get record by ID | Object
-POST | /api/general/{tableName} | Query records. See JQL for body specifications | Object[]
+POST | /api/general/{tableName} | Query records. See [JQL](https://github.com/andrewt3000/jql/blob/master/README.md#jql-1)  for body specifications | Object[]
 POST | /api/general/count/{tableName} | Pulls count for table. Accepts body with where clause | number
 PUT | /api/general/{tableName} | Insert or update a record. Post body is object to insert or update. does upsert based on whether ID field is present in object. <br><br>Arrays attached to object will be added as child tables using the object property as the tableName and using foreign key naming convention to set parent ID. deletedChildren is an object property that will delete from child tables using first object attribute as table name and property of the table name is an array of ids to be deleted. This creates stipulation that tables can't have fields named deletedChildren or the name of child tables. |
 DELETE | /api/general/{tableName}/{ID} | Delete a record |
-
-### JQL
-JSON Query Language (JQL) conventions  
-Post body for query contains json object with these fields
-
-Property | Description |Type |
----|--- |---|
-fields| table column names. If not set, returns tableName.* | string[]
-joins| tables on which inner joins are performed. adds {tableName}Name to columns. Use -tableName for left outer join. Pass an object to specify fields {model:"joinTable", fields\["myField1", "myField2"\]} | string[] or object[]
-where| object containing fields to form where clause. Example {x:1, y:2} translates to "where x=1 and y=2" See Where clause operators | object
-orderBy| array of strings of field names to order by. '-fieldName' for descending.| string[]
-children | table name for child records. if children property exists, it will return an additional array of objects for each child table in input array.  pulls based on foreign key convention | string[]
-offset | offset for starting select (requires order by and limit) | int 
-limit | limit the number of rows returned (requires order by and limit) typically used for paging. | int
-
-#### Where clause operators
-The default is Example {x:1, y:2} translates to "where x=1 and y=2"
-JQL has mongo db style where clause operators.
-Example: where: { qty: { $gt: 20 } } = where qty > 20
-
-property | effect |
----|---|
-$ne | not equal <>
-$gt | greater than >
-$gte | greater than or equal to >=
-$lt | less than <
-$lte | less than or equal to  <=
 
 ## Security
 GE is only for quick prototyping or for production use in an environment where all authenticated users are highly trusted. Example uses are an app for a small company or perhaps an admin app. All users have access to all select, insert, update, and delete functionality. A layer of security restricting access by role would make GE more useful.  
