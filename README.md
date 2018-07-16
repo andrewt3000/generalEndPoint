@@ -6,7 +6,7 @@ This is a General Endpoint (GE) seed project. This seed project is dependent on:
 [General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven node api  
 
 ### Client Side
-[General Store](https://github.com/bradfmd/patportal/blob/master/generalStore.md#general-store) (GS) - mobx store integrated with GE  
+[General Store](https://github.com/andrewt3000/generalStore) (GS) - mobx store integrated with GE  
 [General Components](https://github.com/andrewt3000/generalComponents#general-components) - data aware react/antd components integrated with GS and GE.
 
 
