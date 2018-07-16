@@ -30,7 +30,7 @@ GE HTTP conventions (similar to rest)
 GET | /api/general/{tableName}/ | Get all records | Object[]
 GET | /api/general/{tableName}/{ID} | Get record by ID | Object
 POST | /api/general/{tableName} | Query records. See [JQL](https://github.com/andrewt3000/jql/blob/master/README.md#jql-1)  for body specifications | Object[]
-POST | /api/general/count/{tableName} | Pulls count for table. Accepts body with where clause | number
+POST | /api/general/count/{tableName} | Pulls count for table. Accepts body with jql where clause | number
 PUT | /api/general/{tableName} | Insert or update a record. Post body is object to insert or update. does upsert based on whether ID field is present in object. <br><br>Arrays attached to object will be added as child tables using the object property as the tableName and using foreign key naming convention to set parent ID. deletedChildren is an object property that will delete from child tables using first object attribute as table name and property of the table name is an array of ids to be deleted. This creates stipulation that tables can't have fields named deletedChildren or the name of child tables. |
 DELETE | /api/general/{tableName}/{ID} | Delete a record |
 
