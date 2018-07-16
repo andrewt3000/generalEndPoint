@@ -16,6 +16,7 @@ General Endpoint is designed for typical uses cases, not all queries. Create cus
 It is only for quick prototyping or for production use in an environment where authenticated users are highly trusted. (See [Security](https://github.com/andrewt3000/generalEndPoint#security))
 General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, code that turns json into sql statements.      
 
+### Naming conventions
 General endpoint relies on 3 normalization conventions:  
 1. All tables must have an ID field that is primary key and autoincrements.  
 2. FKs follow naming convention {tableName}ID.  
