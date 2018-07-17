@@ -1,5 +1,5 @@
 # General Framework seed project
-This is a seed project for the General Framework(GF), which is designed to  quickly create crud screens and reducing boilerplate. GF allows you to craft simple data aware react components that require no server side programming.  General Framework is a collection of open source libraries outlined below.  
+This is a seed project for the General Framework(GF), which is designed to  quickly create crud screens and reducing boilerplate. GF allows you to craft simple data aware react components that require no server side programming.  GF is a database first approach, meaning it's expecting a database schema to be defined. General Framework is a collection of open source libraries outlined below.  
 
 ### Server Side
 [JQL](https://github.com/andrewt3000/jql#jql) Json Query language. Converts json to sql.   
@@ -10,7 +10,7 @@ This is a seed project for the General Framework(GF), which is designed to  quic
 [General Components](https://github.com/andrewt3000/generalComponents#general-components) - data aware react components integrated with GS and GE.
 
 # General Endpoint
-This seed project is a reference implementation of the General EndPoint. General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, which turns json into sql statements.  
+This seed project is a reference implementation of the General EndPoint. General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses jql, which turns json into sql statements. 
 
 General Endpoint is designed for typical uses cases, not all queries. Create custom endpoints for more complicated database operations.  
 
