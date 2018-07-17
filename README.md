@@ -3,11 +3,11 @@ This is a seed project for the General Framework, which is designed to  quickly 
 
 ### Server Side
 [JQL](https://github.com/andrewt3000/jql#jql) Json Query language. Converts json to sql.   
-[General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven api  
+[General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven http api  
 
 ### Client Side
 [General Store](https://github.com/andrewt3000/generalStore) (GS) - mobx store integrated with GE  
-[General Components](https://github.com/andrewt3000/generalComponents#general-components) - data aware react/antd components integrated with GS and GE.
+[General Components](https://github.com/andrewt3000/generalComponents#general-components) - data aware react components integrated with GS and GE.
 
 
 # General Endpoint
