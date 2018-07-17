@@ -11,15 +11,18 @@ This is a seed project for the General Framework, which is designed to  quickly 
 
 
 # General Endpoint
-This seed project is a reference implementation of the General EndPoint. This seed project is dependent on: express, auth0, and Sql Server database. However the concept and conventions of General Endpoint and JQL could be decoupled from these dependencies.
+This seed project is a reference implementation of the General EndPoint. General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, which turns json into sql statements.  
+
 General Endpoint is designed for typical uses cases, not all queries. Create custom endpoints for more complicated database operations.  
-General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, which turns json into sql statements.      
+
+This seed project is dependent on: node, express, auth0, and Sql Server database (and it's driver). However the conventions of General Endpoint and JQL are independent.
 
 ### Database Naming conventions
 General endpoint is depenent on 3 database normalization conventions:  
 1. All tables must have an ID field that is primary key and autoincrements.  
 2. FKs follow naming convention {tableName}ID.  
-3. FK lookup tables have a "name" field for display. Use a computed column for names that are composites.   
+3. FK lookup tables have a "name" field for display.  
+Tip: Use a computed column for names that are composites.   
 
 
 ### General EndPoint Http Conventions
