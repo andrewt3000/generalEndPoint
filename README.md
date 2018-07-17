@@ -3,7 +3,7 @@ This is a General Endpoint (GE) seed project. This seed project is dependent on:
 
 ### Server Side
 [JQL](https://github.com/andrewt3000/jql#jql) Json Query language. Converts json to sql.   
-[General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven node api  
+[General Endpoint](https://github.com/andrewt3000/generalEndPoint#general-endpoint-seed-project) (GE) data driven api  
 
 ### Client Side
 [General Store](https://github.com/andrewt3000/generalStore) (GS) - mobx store integrated with GE  
@@ -14,17 +14,17 @@ This is a General Endpoint (GE) seed project. This seed project is dependent on:
 General Endpoint is a frameworks for quickly creating crud screens and reducing boilerplate.
 General Endpoint is designed for typical uses cases, not all queries. Create custom endpoints for more complicated database operations.  
 It is only for quick prototyping or for production use in an environment where authenticated users are highly trusted. (See [Security](https://github.com/andrewt3000/generalEndPoint#security))
-General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, code that turns json into sql statements.      
+General Endpoint is an api that accepts and returns json objects that implement sql crud commands with no programming. It uses a variation of Rest conventions. Internally GE uses a jql, which turns json into sql statements.      
 
-### Naming conventions
-General endpoint relies on 3 normalization conventions:  
+### Database Naming conventions
+General endpoint relies on 3 database normalization conventions:  
 1. All tables must have an ID field that is primary key and autoincrements.  
 2. FKs follow naming convention {tableName}ID.  
 3. FK lookup tables have a "name" field for display. Use a computed column for names that are composites.   
 
 
-### General EndPoint
-GE HTTP conventions (similar to rest)
+### General EndPoint Http Conventions
+GE http conventions are similar, but different from rest conventions.
 
 | HTTP | Url | Description | Returns
 | --- | --- | --- | --- |
@@ -36,12 +36,11 @@ PUT | /api/general/{tableName} | Insert or update a record. Post body is object 
 DELETE | /api/general/{tableName}/{ID} | Delete a record |
 
 ## Security
-GE is only for quick prototyping or for production use in an environment where all authenticated users are highly trusted. Example uses are an app for a small company or perhaps an admin app. All users have access to all select, insert, update, and delete functionality. A layer of security restricting access by role would make GE more useful.  
+In GE all authenticated users are trusted with access to select, insert, update, and delete functionality for all tables. A layer of security restricting access by role would make GE more useful. GE is useful for prototyping and for apps where all users are trusted, for instance an app for a small company or an admin app for a small saas product. 
 
-Even with a small number of trusted users, it's important to not have a usernames and passwords in the database and to use a 3rd party such as auth0. Otherwise authenticated users could get a list of all usernames and update other user's passwords even if they are hashed.
+It's important to not have usernames and passwords in the database. Otherwise authenticated users could compromise security. They could, for instance, get a list of all usernames and update other user's passwords. You can use another database or use a 3rd party authentication service. This seed project uses [auth0](https://auth0.com/). 
 
-JQL is constructed to guard against sql injection attacks and it validates the table and column names against a schema.
-It also parameterizes it's input parameters against sql injection. This prevents accesss to create, drop, and alter commands.
+JQL validates the table and column names against a schema. It also parameterizes it's inputs against sql injection. 
 
 # To run
 
