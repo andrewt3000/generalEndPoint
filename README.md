@@ -25,7 +25,7 @@ Tip: Use a computed column for names that are composites.
 
 
 ### General EndPoint Http Conventions
-GE http conventions are similar, but different from rest conventions.
+GE conventions are similar to rest conventions.
 
 | HTTP | Url | Description | Returns
 | --- | --- | --- | --- |
