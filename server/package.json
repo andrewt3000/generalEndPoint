@@ -21,7 +21,7 @@
   },
   "author": "Matt Bradford <bradfmd@gmail.com>",
   "dependencies": {
-    "auth0": "^2.9.1",
+    "auth0": "^2.27.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "deep-object-diff": "^1.1.0",
