@@ -34,7 +34,7 @@
     "jwks-rsa": "^1.2.1",
     "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "morgan": "^1.9.0",
     "mssql": "^4.1.0",
     "prettier": "^1.13.5"
